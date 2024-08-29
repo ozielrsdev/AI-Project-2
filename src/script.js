@@ -1,12 +1,14 @@
 const userInput = document.getElementById("user-code");
 const completeButton = document.getElementById("complete-btn");
+const generatedTextArea = document.getElementById("generated-text");
+const apiKey = "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"
 
 const query = async (data) => {
   const response = await fetch(
     "https://api-inference.huggingface.co/models/bigcode/starcoder2-3b",
     {
       headers: {
-        Authorization: "Bearer hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       method: "POST",
@@ -19,9 +21,18 @@ const query = async (data) => {
 
 
 completeButton.addEventListener("click", () => {
-  query({ inputs: "Can you please let us know more details about your " }).then(
-    (response) => {
-      console.log(JSON.stringify(response));
-    }
-  );
+  completeButton.setAttribute("disabled", true);
+
+  query({ inputs: `${userInput.value}` })
+    .then((response) => {
+      console.log(response);
+      console.log(response[0]);
+      generatedTextArea.innerHTML = response[0].generated_text;
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    .finally(() => {
+      completeButton.removeAttribute("disabled");
+    });
 });

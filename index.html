@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IntelliMatch - AI</title>
-    <link rel="stylesheet" href="./src/styles/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Completer</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>IntelliMatch</h1>
-        </header>
+      <header>
+        <h1>Code Completer</h1>
+      </header>
 
-        <main>
-            <section class="input-section">
-                <textarea id="user-code" placeholder="Escreva seu código aqui..."></textarea>
-                <button id="complete-btn">Executar</button>
-            </section>
+      <main>
+        <section class="input-section">
+          <textarea
+            id="user-code"
+            placeholder="Escreva seu código aqui..."
+          ></textarea>
+          <button id="complete-btn">Executar</button>
+        </section>
 
-            <section class="output-section">
-                <h2>Resultado:</h2>
-                <pre id="completed-code"></pre>
-            </section>
-        </main>
+        <section class="output-section">
+          <h2>Resultado:</h2>
+          <pre id="generated-text"></pre>
+        </section>
+      </main>
 
-        <footer>
-            <p>Desenvolvido por Oziel | IntelliMatch</p>
-        </footer>
+      <footer>
+        <p>Desenvolvido por Oziel | Projeto 2 - PDA</p>
+      </footer>
     </div>
 
-    <script src="./src/script.js"></script>
-</body>
+    <script src="./src/script.js" type="module"></script>
+  </body>
 </html>
