@@ -1,7 +1,7 @@
 const userInput = document.getElementById("user-code");
 const completeButton = document.getElementById("complete-btn");
 const generatedTextArea = document.getElementById("generated-text");
-const apiKey = "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"
+const apiKey = ""
 
 const query = async (data) => {
   const response = await fetch(
